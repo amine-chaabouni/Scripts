@@ -19,7 +19,7 @@ def main():
     print("extract page ", numbers, "from " , pdf)
 
 
-    pdf = PyPDF2.PdfFileReader(pdf[0])
+    pdf = PyPDF2.PdfFileReader(pdf[0], strict = False)
     pdf_writer = PyPDF2.PdfFileWriter()
     for nb_page in numbers:
         current_page = pdf.getPage(nb_page-1)

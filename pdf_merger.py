@@ -16,7 +16,7 @@ def main():
     print("pdfs to concatenate :", pdfs)
     
 
-    merger = PdfFileMerger()
+    merger = PdfFileMerger(strict=False)
 
     for pdf in pdfs:
         merger.append(pdf)
