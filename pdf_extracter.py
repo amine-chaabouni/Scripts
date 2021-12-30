@@ -25,6 +25,8 @@ def main():
         current_page = pdf.getPage(nb_page-1)
         pdf_writer.addPage(current_page)
     output_filename = args.out
+    if(output_filename[-4:]!=".pdf"):
+        output_filename+=".pdf"
     with open(output_filename,'wb') as out:
         pdf_writer.write(out)
 

@@ -2,7 +2,7 @@ import PyPDF2
 import sys
 import argparse
 
-
+#feature : sort in descending order
 
 def main():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -13,7 +13,7 @@ def main():
     parser.add_argument('-s', dest = 'to_swap', metavar="file", type=str, nargs='+',
                         help='a list of chosen pdf to swap')
     parser.add_argument('-n', dest = 'numbers', metavar="page numbers", type=str, nargs='+',
-                        help='the pages to be extracted')
+                        help='where to insert/swap')
     parser.add_argument('-o', dest='out', type=str, default="result", help='the output file name (default to result)')
 
     args = parser.parse_args()
@@ -25,11 +25,11 @@ def main():
     print("files to place (swap) in original file :", to_swap)
 
     to_insert = args.to_insert
-    print("files to place (swap) in original file :", to_insert)
+    print("files to place (insert) in original file :", to_insert)
 
     numbers = args.numbers
     numbers = [int(x) for x in numbers]
-    print("pages to be swapped ", numbers)
+    print("pages to be swapped/inserted ", numbers)
 
     assert((to_insert is None) ^ (to_swap is None)) #xor operation
 
