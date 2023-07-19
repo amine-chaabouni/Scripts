@@ -1,4 +1,4 @@
-from PyPDF2 import PdfFileMerger
+from PyPDF2 import PdfMerger
 import sys
 import argparse
 
@@ -16,7 +16,7 @@ def main():
     print("pdfs to concatenate :", pdfs)
     
 
-    merger = PdfFileMerger(strict=False)
+    merger = PdfMerger(strict=False)
 
     for pdf in pdfs:
         merger.append(pdf)

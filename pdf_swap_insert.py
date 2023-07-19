@@ -37,10 +37,10 @@ def main():
     inserting = (to_swap is None)
     
 
-    merger = PyPDF2.PdfFileMerger(strict = False)
+    merger = PyPDF2.PdfMerger(strict = False)
 
     original = pdf[-1]
-    nb_pages = PyPDF2.PdfFileReader(original, strict = False).getNumPages()
+    nb_pages = PyPDF2.PdfReader(original, strict = False).getNumPages()
     
     if(inserting):
         L = to_insert

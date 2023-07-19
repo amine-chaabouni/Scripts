@@ -19,11 +19,11 @@ def main():
     print("extract page ", numbers, "from " , pdf)
 
 
-    pdf = PyPDF2.PdfFileReader(pdf[0], strict = False)
-    pdf_writer = PyPDF2.PdfFileWriter()
+    pdf = PyPDF2.PdfReader(pdf[0], strict = False)
+    pdf_writer = PyPDF2.PdfWriter()
     for nb_page in numbers:
-        current_page = pdf.getPage(nb_page-1)
-        pdf_writer.addPage(current_page)
+        current_page = pdf.pages[nb_page-1]
+        pdf_writer.add_page(current_page)
     output_filename = args.out
     if(output_filename[-4:]!=".pdf"):
         output_filename+=".pdf"
